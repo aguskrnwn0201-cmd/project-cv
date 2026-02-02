@@ -37,5 +37,6 @@ Project ini bagian dari roadmap belajar fullstack dari roadmap.sh
 ```
 project-cv/
 ├── index.html
+├── style.css
 ├── README.md
 └── foto.jpg (kalau ada, pastikan bukan foto pribadi sensitif)
