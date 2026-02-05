@@ -1,308 +1,248 @@
-/* ===================================
-   RESET & BASE STYLES
-   =================================== */
-
-/* Universal selector untuk reset default browser styling */
+/* ===== RESET & BASE STYLES ===== */
 * {
-    margin: 0;           /* Hapus margin default */
-    padding: 0;          /* Hapus padding default */
-    box-sizing: border-box;  /* Width/height include padding & border */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Styling untuk seluruh body/halaman */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: 'Poppins', sans-serif;  /* Font modern */
-    background-color: #f5f7fa;           /* Background abu-abu terang */
-    color: #333;                         /* Warna text hitam lembut */
-    line-height: 1.6;                    /* Jarak antar baris */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 20px;
 }
 
-
-/* ===================================
-   HEADER STYLES
-   =================================== */
-
-/* Header dengan background abu-abu gelap */
-body > img {
-    /* Styling untuk foto profil yang langsung di body */
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;           /* Bentuk bulat */
-    border: 5px solid #0c6fad;    /* Border putih */
-    object-fit: cover;            /* Crop gambar proporsional */
-    display: block;               /* Jadi block element */
-    margin: 30px auto 20px;       /* Center horizontal */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* Shadow */
+/* ===== CONTAINER/WRAPPER ===== */
+/* Membuat CV terpusat dan memiliki lebar maksimal */
+body > * {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Styling untuk nama (H1) */
-body > h1 {
-    background: #0c6fad;          /* Background abu-abu gelap */
-    color: #ffffff;               /* Text putih */
-    padding: 20px;                /* Padding dalam */
-    text-align: center;           /* Text di tengah */
-    font-size: 2.5em;            /* Ukuran besar */
-    margin: 0;                    /* Hapus margin */
+/* ===== HEADER SECTION (Foto & Nama) ===== */
+img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+    object-fit: cover;
 }
 
-/* Contact info di bawah nama */
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Paragraph untuk kontak info di bawah nama */
 body > p:first-of-type {
-    background: #0c6fad;          /* Background sama dengan H1 */
-    color: #ffffff;               /* Text putih */
-    text-align: center;           /* Text di tengah */
-    padding: 0 20px 30px;         /* Padding kiri-kanan-bawah */
-    font-size: 1em;              /* Ukuran normal */
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
 }
 
-
-/* ===================================
-   HR (HORIZONTAL RULE) STYLES
-   =================================== */
-
-/* Styling untuk garis pembatas <hr> */
+/* ===== HORIZONTAL RULE ===== */
 hr {
-    border: none;                 /* Hapus border default */
-    border-top: 2px solid #e0e0e0;  /* Garis atas 2px abu-abu */
-    margin: 40px 0;              /* Margin atas-bawah */
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+    margin: 30px 0;
 }
 
-
-/* ===================================
-   SECTION STYLES
-   =================================== */
-
-/* Container untuk setiap section */
+/* ===== SECTION STYLING ===== */
 section {
-    max-width: 900px;            /* Lebar maksimal */
-    margin: 0 auto 40px;         /* Center horizontal dengan margin bawah */
-    padding: 0 30px;             /* Padding kiri-kanan */
+    background-color: var(--white);
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Judul section (H2) */
-section h2 {
-    color: #35424a;              /* Warna abu-abu gelap */
-    font-size: 1.8em;            /* Ukuran besar */
-    font-weight: 600;            /* Semi-bold */
-    margin-bottom: 20px;         /* Jarak ke konten */
-    padding-bottom: 10px;        /* Padding bawah */
-    border-bottom: 3px solid #35424a;  /* Garis bawah */
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-/* ===================================
-   TENTANG SAYA SECTION
-   =================================== */
-
-/* Paragraf di section Tentang Saya */
-section p {
-    text-align: justify;         /* Rata kiri-kanan */
-    color: #555;                 /* Abu-abu gelap */
-    font-size: 1em;              /* Ukuran normal */
-    line-height: 1.8;            /* Line height lebar */
+/* ===== HEADING STYLES ===== */
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--secondary-color);
+    font-weight: 600;
 }
 
-
-/* ===================================
-   PENGALAMAN & PENDIDIKAN
-   =================================== */
-
-/* List utama di Pengalaman Kerja & Pendidikan */
-section > ul {
-    list-style: none;            /* Hapus bullet default */
-    padding: 0;                  /* Hapus padding */
+h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-/* Setiap item pengalaman/pendidikan (LI level pertama) */
+/* ===== PARAGRAPH IN SECTIONS ===== */
+section > p {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* ===== LIST STYLING ===== */
+ul {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+/* List level pertama (main items) */
 section > ul > li {
-    margin-bottom: 30px;         /* Jarak antar item */
-    padding-left: 30px;          /* Padding kiri untuk garis */
-    border-left: 3px solid #35424a;  /* Garis vertikal kiri */
-    position: relative;          /* Untuk positioning bullet */
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
-/* Bullet bulat di timeline menggunakan ::before */
-section > ul > li::before {
-    content: '';                 /* Content kosong */
-    position: absolute;          /* Position absolute */
-    left: -8px;                  /* Geser ke kiri (tengah garis 3px) */
-    top: 5px;                    /* Sedikit turun */
-    width: 12px;                 /* Lebar bullet */
-    height: 12px;                /* Tinggi bullet */
-    background: #35424a;         /* Warna abu gelap */
-    border-radius: 50%;          /* Bentuk bulat */
+/* Strong text dalam list (job titles) */
+section > ul > li > strong {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    display: block;
+    margin-bottom: 8px;
 }
 
-/* Judul pekerjaan/pendidikan (strong tag) */
-section > ul > li strong {
-    color: #35424a;              /* Warna abu gelap */
-    font-size: 1.1em;            /* Sedikit lebih besar */
-    display: block;              /* Block element */
-    margin-bottom: 10px;         /* Jarak ke list detail */
+/* Nested list (detail pekerjaan) */
+section > ul > li > ul {
+    margin-top: 10px;
+    margin-left: 25px;
+    list-style-type: circle;
 }
 
-/* List detail di dalam setiap pengalaman (nested UL) */
-section > ul > li ul {
-    list-style: none;            /* Hapus bullet default */
-    margin-top: 10px;            /* Jarak dari atas */
-    padding-left: 0;             /* Hapus padding kiri */
+section > ul > li > ul > li {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    padding-left: 5px;
 }
 
-/* Setiap detail item (nested LI) */
-section > ul > li ul li {
-    padding: 5px 0 5px 20px;     /* Padding atas-bawah-kiri */
-    position: relative;          /* Untuk positioning arrow */
-    color: #666;                 /* Abu-abu medium */
+/* ===== LINK SECTION (Footer Links) ===== */
+body > p:last-of-type,
+body > p:nth-last-of-type(2) {
+    background-color: var(--white);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
 }
 
-/* Arrow custom menggunakan ::before */
-section > ul > li ul li::before {
-    content: '▹';                /* Karakter arrow */
-    position: absolute;          /* Position absolute */
-    left: 0;                     /* Di ujung kiri */
-    color: #35424a;              /* Warna abu gelap */
-    font-weight: bold;           /* Bold */
-}
-
-
-/* ===================================
-   KEAHLIAN SECTION
-   =================================== */
-
-/* Sub-heading H3 di section Keahlian */
-section h3 {
-    color: #35424a;              /* Warna abu gelap */
-    font-size: 1.3em;            /* Ukuran medium */
-    font-weight: 600;            /* Semi-bold */
-    margin-top: 25px;            /* Jarak dari atas */
-    margin-bottom: 15px;         /* Jarak ke list */
-    padding-left: 10px;          /* Sedikit padding kiri */
-    border-left: 4px solid #35424a;  /* Accent border kiri */
-}
-
-/* List skill di bawah H3 */
-section h3 + ul {
-    list-style: none;            /* Hapus bullet default */
-    background: #f8f9fa;         /* Background abu terang */
-    padding: 20px 25px;          /* Padding dalam */
-    border-radius: 8px;          /* Sudut melengkung */
-    margin-bottom: 20px;         /* Jarak ke section berikut */
-}
-
-/* Setiap skill item */
-section h3 + ul li {
-    padding: 8px 0 8px 25px;     /* Padding */
-    position: relative;          /* Untuk checkmark */
-    color: #555;                 /* Warna text */
-}
-
-/* Checkmark menggunakan ::before */
-section h3 + ul li::before {
-    content: '✓';                /* Karakter checkmark */
-    position: absolute;          /* Position absolute */
-    left: 0;                     /* Di ujung kiri */
-    color: #35424a;              /* Warna abu gelap */
-    font-weight: bold;           /* Bold */
-    font-size: 1.2em;            /* Sedikit lebih besar */
-}
-
-
-/* ===================================
-   LINK SECTION
-   =================================== */
-
-/* Paragraf yang berisi link */
-body > p:not(:first-of-type) {
-    max-width: 900px;            /* Lebar maksimal */
-    margin: 10px auto;           /* Center horizontal */
-    padding: 15px 30px;          /* Padding dalam */
-    background: #f8f9fa;         /* Background abu terang */
-    border-radius: 5px;          /* Sudut melengkung */
-}
-
-/* Styling link */
 a {
-    color: #35424a;              /* Warna abu gelap */
-    text-decoration: none;       /* Hapus underline */
-    font-weight: 500;            /* Medium weight */
-    transition: all 0.3s ease;   /* Animasi smooth */
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    word-break: break-all;
 }
 
-/* Hover effect pada link */
 a:hover {
-    color: #1e3c72;              /* Warna biru saat hover */
-    text-decoration: underline;   /* Tambah underline saat hover */
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
-
-/* ===================================
-   RESPONSIVE DESIGN
-   =================================== */
-
-/* Media query untuk tablet & mobile (max 768px) */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    
-    /* Ukuran H1 lebih kecil */
-    body > h1 {
-        font-size: 2em;
-        padding: 15px;
+    body {
+        padding: 10px;
     }
-    
-    /* Contact info lebih kecil */
-    body > p:first-of-type {
-        font-size: 0.9em;
-        padding: 0 15px 20px;
+
+    h1 {
+        font-size: 2rem;
     }
-    
-    /* Section padding lebih kecil */
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
     section {
-        padding: 0 20px;
+        padding: 20px 15px;
     }
-    
-    /* Section title lebih kecil */
-    section h2 {
-        font-size: 1.5em;
-    }
-    
-    /* HR margin lebih kecil */
-    hr {
-        margin: 30px 0;
-    }
-    
-    /* Timeline padding lebih kecil */
+
+    section > p,
     section > ul > li {
-        padding-left: 20px;
+        font-size: 1rem;
     }
-    
-    /* Foto profil lebih kecil */
-    body > img {
+
+    img {
         width: 120px;
         height: 120px;
     }
 }
 
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.7rem;
+    }
 
-/* ===================================
-   PRINT STYLES
-   =================================== */
+    body > p:first-of-type {
+        font-size: 0.95rem;
+    }
 
-/* Styling khusus saat print */
+    section {
+        padding: 15px 10px;
+    }
+
+    section > ul > li > ul {
+        margin-left: 15px;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+/* Optimasi untuk print/PDF */
 @media print {
     body {
-        background: white;       /* Background putih */
+        background-color: var(--white);
+        padding: 0;
     }
-    
-    /* Hapus background section */
-    section h3 + ul,
-    body > p:not(:first-of-type) {
-        background: white;
-        border: 1px solid #ddd;
+
+    section {
+        box-shadow: none;
+        page-break-inside: avoid;
     }
-    
-    /* Pastikan warna gelap untuk print */
-    body > h1,
-    body > p:first-of-type {
-        background: #35424a;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+
+    section:hover {
+        transform: none;
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+
+    hr {
+        background: var(--border-color);
     }
 }
